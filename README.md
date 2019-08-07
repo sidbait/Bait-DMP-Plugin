@@ -1,12 +1,10 @@
-Cordova Plugin Template
+Cordova DMP Plugin with AAR integraion for Android
 ======
 
-
-# Cordova Plugin with Dynamsoft Barcode Reader for iOS and Android
-Use the Cordova plugin to quickly develop mobile barcode reader apps for iOS and Android. For more information, please visit http://www.dynamsoft.com/Products/Dynamic-Barcode-Reader.aspx.
+Use the Cordova plugin to collect DMP points.
 
 ## License
-Get the [trial license](https://www.dynamsoft.com/CustomerPortal/Portal/Triallicense.aspx).
+Get the [trial license](https://github.com/sidbait/Bait-DMP-Plugin/blob/master/LICENSE).
 
 ## Installation
 1. Install **Cordova** vi **npm**:
@@ -18,15 +16,14 @@ Get the [trial license](https://www.dynamsoft.com/CustomerPortal/Portal/Triallic
 2. Download the source code and add the plugin via local path:
 
     ```
-        cordova plugin add <local-path>/cordova-plugin-dbr
+        cordova plugin add <local-path>/Bait-DMP-Plugin
     ```
 
    Or, install the plugin via repo url directly:
     ```
-        cordova plugin add https://github.com/dynamsoft-dbr/cordova-plugin-dbr.git
+        cordova plugin add https://github.com/sidbait/Bait-DMP-Plugin.git
     ```
 
 ## Supported Platforms
 
-- iOS
 - Android
