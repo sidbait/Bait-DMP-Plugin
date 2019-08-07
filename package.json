@@ -1,0 +1,12 @@
+{
+  "name": "bait-dmp-plugin",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "bait-dmp-plugin",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "description": "A starting point for a Cordova Plugin"
+}
