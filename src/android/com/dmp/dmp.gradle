@@ -5,7 +5,7 @@
    }
    }
   dependencies {
-   implementation (name:'test', ext:'aar')
+   implementation (name:'dmp', ext:'aar')
    }
  android {
     packagingOptions {

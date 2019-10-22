@@ -23,7 +23,7 @@
         </config-file>
         <source-file src="src/android/com/dmp/DmpPlugin.java" target-dir="src/com/dmp/" />
         <framework src="src/android/com/dmp/dmp.gradle" custom="true" type="gradleReference" />
-        <resource-file src="aar/test.aar" target="libs/test.aar" />
+        <resource-file src="aar/dmp.aar" target="libs/dmp.aar" />
     </platform>
     <!-- ios -->
     <platform name="ios">

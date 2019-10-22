@@ -10,8 +10,8 @@ var DmpPlugin = {
   getDate: function (cb) {
     exec(cb, null, PLUGIN_NAME, 'getDate', []);
   },
-  getDevice: function (cb) {
-    exec(cb, null, PLUGIN_NAME, 'getDevice', []);
+  fetchDMP: function (cb) {
+    exec(cb, null, PLUGIN_NAME, 'fetchDMP', []);
   }
 };
 

@@ -1,5 +1,3 @@
-/**
- */
 package com.dmp;
 
 import org.apache.cordova.CallbackContext;
@@ -11,7 +9,8 @@ import org.apache.cordova.PluginResult.Status;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
-import com.nz.testmod.TestMain;
+import com.nz.dmp.DMPManager;
+import com.nz.dmp.DMPResponseObserver;
 
 import android.util.Log;
 
@@ -22,11 +21,11 @@ public class DmpPlugin extends CordovaPlugin {
 
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     super.initialize(cordova, webView);
-
     Log.d(TAG, "Initializing DmpPlugin");
   }
 
   public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
+  
     if(action.equals("echo")) {
       String phrase = args.getString(0);
       // Echo back the first argument
@@ -37,12 +36,24 @@ public class DmpPlugin extends CordovaPlugin {
       // An example of returning data back to the web layer
       final PluginResult result = new PluginResult(PluginResult.Status.OK, (new Date()).toString());
       callbackContext.sendPluginResult(result);
-    } else if(action.equals("getDevice")) {
-      // An example of returning data back to the web layer
-      final String deviceId = TestMain.getDeviceId(this.cordova.getActivity());
-      Log.d(TAG, deviceId);
-      final PluginResult result = new PluginResult(PluginResult.Status.OK, deviceId);
-      callbackContext.sendPluginResult(result);
+    } else if(action.equals("fetchDMP")) {
+
+    this.cordova.getActivity().runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+
+        DMPManager.getInstance().init(cordova.getActivity(), new DMPResponseObserver() {
+          @Override
+          public void onResponse(String message) {
+
+                Log.e(TAG, "Plugin-DMP-JSON" + message);
+              final PluginResult result = new PluginResult(PluginResult.Status.OK, message);
+              callbackContext.sendPluginResult(result);
+             }
+          });
+        }
+      });
+
     }
     return true;
   }
