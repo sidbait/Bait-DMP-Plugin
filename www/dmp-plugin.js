@@ -12,6 +12,12 @@ var DmpPlugin = {
   },
   fetchDMP: function (cb) {
     exec(cb, null, PLUGIN_NAME, 'fetchDMP', []);
+  },
+  initFlurry: (flurryId, cb) => {
+    exec(cb, null, PLUGIN_NAME, 'initFlurry', [flurryId]);
+  },
+  logAppSessionEvent: (appId, cb) => {
+    exec(cb, null, PLUGIN_NAME, 'logAppSessionEvent', [appId]);
   }
 };
 

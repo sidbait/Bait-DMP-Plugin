@@ -54,7 +54,27 @@ public class DmpPlugin extends CordovaPlugin {
         }
       });
 
-    }
+    } else if(action.equals("initFlurry")) {
+      final String flurryId = args.getString(0);
+      this.cordova.getActivity().runOnUiThread(new Runnable() {
+        @Override
+        public void run() {
+  
+          DMPManager.getInstance().initFlurry(flurryId);
+          }
+        });
+  
+      } else if(action.equals("logAppSessionEvent")) {
+        final String appId = args.getString(0);
+        this.cordova.getActivity().runOnUiThread(new Runnable() {
+          @Override
+          public void run() {
+    
+            DMPManager.getInstance().logAppSessionEvent(appId);
+            }
+          });
+    
+        }
     return true;
   }
 
