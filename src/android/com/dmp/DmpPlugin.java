@@ -75,8 +75,11 @@ public class DmpPlugin extends CordovaPlugin {
               public void onResponse(String message) {
     
                     Log.e(TAG, "Plugin-DMP-JSON" + message);
-                  final PluginResult result = new PluginResult(PluginResult.Status.OK, message);
-                  callbackContext.success(result);
+                 /*  final PluginResult result = new PluginResult(PluginResult.Status.OK, message);
+                  callbackContext.sendPluginResult(result); */
+
+                  callbackContext.success(message);
+ 
                  }
               });
             }
