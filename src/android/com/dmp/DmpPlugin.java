@@ -38,7 +38,7 @@ public class DmpPlugin extends CordovaPlugin {
       callbackContext.sendPluginResult(result);
     } else if(action.equals("fetchDMP")) {
 
-    this.cordova.getActivity().runOnUiThread(new Runnable() {
+  /*   this.cordova.getActivity().runOnUiThread(new Runnable() {
       @Override
       public void run() {
 
@@ -52,8 +52,18 @@ public class DmpPlugin extends CordovaPlugin {
              }
           });
         }
-      });
+      }); */
 
+
+      DMPManager.getInstance().init(cordova.getActivity(), new DMPResponseObserver() {
+        @Override
+        public void onResponse(String message) {
+
+              Log.e(TAG, "Plugin-DMP-JSON" + message);
+            final PluginResult result = new PluginResult(PluginResult.Status.OK, message);
+            callbackContext.sendPluginResult(result);
+           }
+        });
    /*  } else if(action.equals("initFlurry")) {
       final String flurryId = args.getString(0);
       this.cordova.getActivity().runOnUiThread(new Runnable() {
