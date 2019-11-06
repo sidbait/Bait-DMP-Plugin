@@ -98,7 +98,7 @@ public class DmpPlugin extends CordovaPlugin {
   
       } else if(action.equals("logAppSessionEvent")) {
         final String appId = args.getString(0);
-        this.cordova.getActivity().runOnUiThread(new Runnable() {
+        this.cordova.getThreadPool().execute(new Runnable() {
           @Override
           public void run() {
     
