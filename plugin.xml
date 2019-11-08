@@ -24,6 +24,9 @@
         <source-file src="src/android/com/dmp/DmpPlugin.java" target-dir="src/com/dmp/" />
         <framework src="src/android/com/dmp/dmp.gradle" custom="true" type="gradleReference" />
         <resource-file src="aar/dmp.aar" target="libs/dmp.aar" />
+        <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge">
+            <application android:allowBackup="false"/>
+        </edit-config>
     </platform>
     <!-- ios -->
     <platform name="ios">
