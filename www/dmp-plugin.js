@@ -18,6 +18,9 @@ var DmpPlugin = {
   },
   logAppSessionEvent: (appId, cb) => {
     exec(cb, null, PLUGIN_NAME, 'logAppSessionEvent', [appId]);
+  },
+  deleteSharedPrefs: ( cb) => {
+    exec(cb, null, PLUGIN_NAME, 'deleteSharedPrefs', []);
   }
 };
 

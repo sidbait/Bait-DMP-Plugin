@@ -106,7 +106,16 @@ public class DmpPlugin extends CordovaPlugin {
             }
           });
     
-        }
+        } else if(action.equals("deleteSharedPrefs")) {
+          this.cordova.getThreadPool().execute(new Runnable() {
+            @Override
+            public void run() {
+      
+              DMPManager.getInstance().deleteSharedPrefs(cordova.getActivity());
+              }
+            });
+      
+          }
     return true;
   }
 
