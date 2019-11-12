@@ -113,7 +113,7 @@ public class DmpPlugin extends CordovaPlugin {
       
              // DMPManager.getInstance().deleteSharedPrefs(cordova.getActivity());
 
-                   DMPManager.getInstance().deleteSharedPrefs(cordova.getActivity(), new DMPResponseObserver() {
+                   DMPManager.getInstance().deleteSharedPrefs(cordova.getActivity(), new DMP_SP_ResponseObserver() {
               @Override
               public void onResponse(String message) {
     
