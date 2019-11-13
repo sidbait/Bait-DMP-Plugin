@@ -104,7 +104,7 @@ public class DmpPlugin extends CordovaPlugin {
           public void run() {
     
             DMPManager.getInstance().logAppSessionEvent(cordova.getActivity(),appId);
-String message;
+String message = "";
             final PluginResult result = new PluginResult(PluginResult.Status.OK, message);
                   callbackContext.sendPluginResult(result);
 
